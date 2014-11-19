@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116031723) do
+ActiveRecord::Schema.define(version: 20141119190744) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,43 @@ ActiveRecord::Schema.define(version: 20141116031723) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "cart_items", force: true do |t|
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "Product_id"
+    t.integer  "cart_id"
+  end
+
+  add_index "cart_items", ["Product_id"], name: "index_cart_items_on_Product_id"
+  add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id"
+
+  create_table "carts", force: true do |t|
+    t.string   "status"
+    t.decimal  "pst_rate"
+    t.decimal  "gst_rate"
+    t.decimal  "hst_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "customer_id"
+  end
+
+  add_index "carts", ["customer_id"], name: "index_carts_on_customer_id"
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "country"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "province_id"
+  end
+
+  add_index "customers", ["province_id"], name: "index_customers_on_province_id"
+
   create_table "genres", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -64,5 +101,14 @@ ActiveRecord::Schema.define(version: 20141116031723) do
   end
 
   add_index "jingles", ["genre_id"], name: "index_jingles_on_genre_id"
+
+  create_table "provinces", force: true do |t|
+    t.string   "name"
+    t.decimal  "pst"
+    t.decimal  "gst"
+    t.decimal  "hst"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
