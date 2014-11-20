@@ -1,0 +1,66 @@
+$myFont: Helvetica, sans-serif;
+$myFav: #2b2b2b;
+
+body {
+  width: 750px;
+  margin: 0 auto;
+  font-family: web-font, sans-serif;
+  color: #868d7c;
+}
+
+#content {
+  background: #d5d0c7;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+header {
+  h1 {
+    font: $myFont;
+    font-weight: normal;
+    font-size: 3em;
+    color: $myFav;
+    text-align: center;
+    a {
+      &:link, &:visited {
+        color: $myFav;
+        text-decoration: none;
+      }
+    }
+  }
+  nav ul {
+    list-style-type: none;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    li {
+      display: inline;
+      padding: 10px 15px;
+      a {
+        text-transform: uppercase;
+        &:link {
+          text-decoration: none;
+          color: #868d7c;
+        }
+      }
+    }
+  }
+  ul li a:visited {
+    text-decoration: none;
+    color: #868d7c;
+  }
+  nav ul li a:hover, ul li a:focus {
+    color: #2b2b2b;
+    text-decoration: underline;
+  }
+}
+
+#frontJingles {
+  border: 1px solid #868d7c;
+  font-family: "Rokkitt", serif;
+  font-weight: normal;
+  color: #2b2b2b;
+  padding-left: 25px;
+}
