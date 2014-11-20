@@ -1,0 +1,14 @@
+<p>Our Newest Jingles : </p>
+
+<table>
+	<th>Name</th>
+	<th>Price</th>
+
+<% @newestJingles.each do |new| %>
+	<tr>
+		<td><%=new.name%></td>
+		<td><%=new.price%></td>
+	</tr>
+<%end%>
+
+</table>

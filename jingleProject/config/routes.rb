@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root 'jingles#home'
 
+  get 'about' => 'jingles#about'
+
+  get 'jingles' => 'jingles#jingles'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

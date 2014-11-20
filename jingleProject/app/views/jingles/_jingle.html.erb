@@ -8,6 +8,27 @@
 	  <strong>Genre:</strong>
 	  <%= jingle.genre.name %>
 	</p>
+
+	<p>
+	  <strong>Description:</strong>
+	  <%= jingle.description %>
+	</p>
+
+	<p>
+	  <strong>Price:</strong>
+	  <%= number_to_currency jingle.price %>
+	</p>
+
+	<p>
+	  <strong>Lyrics:</strong>
+	  <% if jingle.hasLyrics %>
+	  Yes
+	  <%else%>
+	  no
+	  <%end%>
+	</p>
 </div>
+
+
 
 
