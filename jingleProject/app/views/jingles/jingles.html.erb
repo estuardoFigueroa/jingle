@@ -12,3 +12,18 @@
 <%end%>
 
 </table>
+
+<p>Jingles On Sales : </p>
+
+<table>
+	<th>Name</th>
+	<th>Price</th>
+
+<% @onsaleJingles.each do |sale| %>
+	<tr>
+		<td><%=sale.name%></td>
+		<td><%=sale.price%></td>
+	</tr>
+<%end%>
+
+</table>

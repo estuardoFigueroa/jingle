@@ -10,4 +10,18 @@ permit_params :genre_id, :name, :description, :price, :hasLyrics, :isBought, :im
     end
     actions
   end
+
+  form :html => {:enctype => 'multipart/form-data'} do |f|
+    f.inputs "Details" do
+      f.input :name
+      f.input :genre
+      f.input :description
+      f.input :price
+      f.input :hasLyrics
+      f.input :isBought
+      f.input :image
+      f.input :sale
+    end
+    f.actions
+  end
 end
