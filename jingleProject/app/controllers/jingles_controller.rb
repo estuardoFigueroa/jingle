@@ -1,16 +1,20 @@
+
 class JinglesController < ApplicationController
   def home
-    @jinAll = Jingle.all
+    @jin_all = Jingle.all
   end
 
   def about
   end
 
   def jingles
-    @jingles = Jingle.all
-    @newestJingles = Jingle.limit(3).reverse_order
-    @onsaleJingles = Jingle.where("price < 250")
-    @allJingles    = Jingle.all
-    @jinGenre      = Genre.all
+    @jingles = Jingle.all.order(:name)
+    @newest_jingles = Jingle.limit(3).reverse_order
+    @onsale_jingles = Jingle.where('price < 250')
+    @all_jingles    = Jingle.all
+    @jin_genre      = Genre.all
+  end
+
+  def contact
   end
 end

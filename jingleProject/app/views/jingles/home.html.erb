@@ -1,39 +1,40 @@
 <div id="content">
             <div id="sliderFrame">
                 <div id="slider">
-                    <img src="images/tikalstudio.jpg" alt="Tikal Studios" />
-                    <img src="images/studio1.jpg" alt="" />
-                    <img src="images/studio2.jpg" alt="" />
-                    <img src="images/studio3.jpg" alt="Best sounding sound!" />
-                    <img src="images/studio4.jpg" alt="State of the art gear"/>
+                	<%=image_tag "jingle_home.jpg", :alt => "Jingl e Store" %>
+                    <%=image_tag "add.jpg", :alt => "Advertise" %>
+                    <%=image_tag "on_air.jpg", :alt => "Go On Air" %>
+                    <%=image_tag "sound.jpg", :alt => "We Have the Best Recording Gear" %>
+                    <%=image_tag "banner.jpg", :alt => "Making new Ideas" %>
                 </div>
             </div>
             <section class="description">
-                <p>Tikal Studios is a professional recording studio located in downtown Winnipeg, featuring the best of both vintage analog and modern digital tools. Music is our passion and we focus on making a big sound in an intimate setting.
+                <p>Jingl e Store offers a variety of transmission-ready radio and television jingles for 	low reasonable prices
+				   The radio jingles and drop-ins can be reproduced in part, individually with your radio Slogan / branded. We also offer weekly radio items and a daily news service in mp3!.
                 </p>
-                <a href="contact.html" class="myButton">Book A Session</a>
+                 <%= link_to "Check out our Jingles", jingles_path, class: "myButton"%>
                 <div class="clear"></div>
             </section>
             <section class="recording">
-                <img src="images/mic.png" alt="microphone" />
+                <%=image_tag "marketing.jpg", :alt => "" %>
                 <p>
                     It is incredibly important to have a professional quality recording of your music before you try to shop it around. Even if a music supervisor loves your song, he would not pick it if it's not recorded in broadcast quality. Here at Tikal Studios we make sure that is taken care of.
                 </p>
             </section>
             <section class="mixing">
-                <img src="images/mixer.png" alt="mixer" />
+                <%=image_tag "jin.gif", :alt => "" %>
                 <p>
                     The combination of our award-winning engineers, Tikal  Studios acoustics and our unrivalled range of traditional and state-of-the-art equipment ensure that we are world leaders in the fields of audio mixing and sound restoration.
                 </p>
             </section>
              <section class="master">
-                <img src="images/master.png" alt="master" />
+                <%=image_tag "Broadcast.jpg", :alt => "" %>
                 <p>
                     Mastering is the final stage in the production process and ensures that the music fits together seamlessly and that it is presented with the best possible sound. It involves editing and compiling the required mixes and tracks in production order, and then producing the final master. 
                 </p>
             </section>
         </div>
         <footer>
-            <p class="center" id="copyright">&copy; Estuardo Figueroa 2014</p>
+            <p class="center" id="copyright">&copy; Jingl e Store 2014</p>
         </footer>
 

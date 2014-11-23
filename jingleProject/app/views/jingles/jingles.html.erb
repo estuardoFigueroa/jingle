@@ -1,11 +1,12 @@
 <%= render @jingles %>
+
 <p>Our Newest Jingles : </p>
 
 <table>
 	<th>Name</th>
 	<th>Price</th>
 
-<% @newestJingles.each do |newest| %>
+<% @newest_jingles.each do |newest| %>
 	<tr>
 		<td><%=newest.name%></td>
 		<td><%=newest.price%></td>
@@ -14,13 +15,13 @@
 
 </table>
 
-<p>Jingles On Sales : </p>
+<p>Jingles On Sales :</p>
 
 <table>
 	<th>Name</th>
 	<th>Price</th>
 
-<% @onsaleJingles.each do |sale| %>
+<% @onsale_jingles.each do |sale| %>
 	<tr>
 		<td><%=sale.name%></td>
 		<td><%=sale.price%></td>
@@ -37,12 +38,12 @@
 	<th>Description</th>
 	<th> <th>
 
-<% @allJingles.each do |jin| %>
+<% @all_jingles.each do |jin| %>
 	<tr>
 		<td><%=jin.genre.name%></td>
 		<td><%=jin.name%></td>
 		<td><%=jin.description%></td>
-		<td><%=image_tag jin.image%></td>
+		<td><%=image_tag jin.image, :alt => "Jingle", :width => 200, :height => 150, :crop => :fill%></td>
 	</tr>
 <%end%>
 

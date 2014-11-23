@@ -1,5 +1,5 @@
 class Genre < ActiveRecord::Base
-has_many :jingles
+  has_many :jingles
 
-validates :name, presence: true
+  validates :name, presence: true
 end

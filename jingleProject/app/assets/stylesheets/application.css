@@ -13,3 +13,886 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+	width: 750px;
+	margin: 0 auto;
+	font-family: web-font, sans-serif;
+	color: #868D7C;
+}
+
+#content {
+	background: #D5D0C7;
+	border-radius: 15px;
+	padding: 15px;
+}
+
+header h1 {
+	font-family: 'Rokkitt', serif;
+	font-weight: normal;
+	font-size: 3em;
+	color: #2B2B2B;
+}
+
+header h1 a:link,
+header h1 a:visited {
+	color: #2B2B2B;
+	text-decoration: none;
+}
+
+/* Navigation */
+
+header nav ul {
+	list-style-type: none;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 15px 0;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+header nav ul li {
+	display: inline;
+	padding: 10px 15px;
+}
+
+header nav ul li a {
+	text-transform: uppercase;
+}
+
+header nav ul li a:link, header ul li a:visited {
+	text-decoration: none;
+	color: #868D7C;
+}
+
+header nav ul li a:hover, header ul li a:focus {
+	color: #2B2B2B;
+	text-decoration: underline;
+}
+
+/* SLIDER */
+#sliderFrame 
+{
+    position:relative;
+    width:700px;
+    margin:0 auto; /*center-aligned*/
+}
+
+#slider, #slider div.sliderInner {
+    width:700px;height:306px;/* Must be the same size as the slider images */
+}
+
+/* Caption styles */
+#slider div.mc-caption-bg, #slider div.mc-caption-bg2 {
+	position:absolute;
+	width:100%;
+	height:auto;
+	padding:10px 0;/* 10px will increase the height.*/
+	left:0px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
+	bottom:0px;/*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+	z-index:3;
+	overflow:hidden;
+	font-size: 0;
+}
+#slider div.mc-caption-bg {
+    /* NOTE: Its opacity is to be set through the sliderOptions.captionOpacity setting in the js-image-slider.js file.*/
+	background:Black;/* or any other colors such as White, or: background:none; */
+}
+
+#slider div.mc-caption {
+	font: bold 14px/20px Arial;
+	color:#EEE;
+	z-index:4;
+	text-align:center;
+    background:none;
+}
+
+/* ------ built-in navigation bullets wrapper ------*/
+#slider div.navBulletsWrapper  {
+	float: left;
+	padding-left: 295px;
+    top:320px;
+	text-align:center;
+	background:none;
+	position:relative;
+	z-index:5;
+}
+
+/* each bullet */
+#slider div.navBulletsWrapper div 
+{
+    width:11px; height:11px;
+    font-size:0;color:White;
+    background:transparent url(../images/bullet.png) no-repeat 0 0;
+    display:inline-block; *display:inline; zoom:1;
+    overflow:hidden;cursor:pointer;
+    /* set distance between each bullet*/
+    margin:0 6px;
+}
+
+
+#slider div.navBulletsWrapper div.active {
+	background-position:0 -11px;
+}
+
+.description p {
+	float: left;
+	margin-top: 70px;
+	margin-right: 200px;
+	border-bottom: 2px solid #ccc;
+	padding-bottom: 10px;
+	font-size: 12px;
+
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:15px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+	float: right;
+	margin-top: -70px;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.recording {
+	float: left;
+	width: 220px;
+	padding-left: 10px;
+	font-size: 12px;
+}
+
+.recording img {
+	margin-left: 50px;
+}
+
+.mixing {
+	float: left;
+	font-size: 12px;
+	width: 250px;
+	padding-left: 50px;
+}
+
+.mixing img {
+	margin-left: 30px;
+	padding-top: 20px;
+	padding-bottom: 16px;
+}
+
+.master {
+	float: right;
+	padding-top: 7px;
+	font-size: 12px;
+	width: 200px;
+	clear: right;
+}
+
+.master img {
+	margin-left: 40px;
+
+}
+
+footer p{
+	float: right;
+	padding-right: 325px;
+	padding-top: 25px;
+	height: 30px;
+    font-size: 10px;
+    text-align: center;
+}
+
+
+/*
+*
+* Studios page Styles
+*
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#gallery-container {
+  font-size: 20px;
+  margin: auto;
+  position: relative;
+  max-width: 50em;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 1em
+}
+
+#gallery-container:full-screen {
+  max-width: 100% !important;
+  width: 100%;
+  height: 100% !important;
+  background-color: #111
+}
+
+#gallery-container:-webkit-full-screen {
+  max-width: 100% !important;
+  width: 100%;
+  height: 100% !important;
+  background-color: #111
+}
+
+#gallery-container:-moz-full-screen {
+  max-width: 100% !important;
+  width: 100%;
+  height: 100% !important;
+  background-color: #111
+}
+
+.controls {
+  text-align: center;
+  font-size: 1em;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+.control,
+.grid,
+.fs-toggle {
+  width: .66em;
+  height: .66em;
+  text-align: center;
+  line-height: .5em;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px
+}
+
+.showControls {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: opacity .6s 1s ease;
+  transition: opacity .6s 1s ease
+}
+
+.hideControls {
+  opacity: 0;
+  pointer-events: none
+}
+
+.icon-grid,
+.icon-arrow-left,
+.icon-arrow-right,
+.icon-fullscreen-exit,
+.icon-fullscreen {
+  display:inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/controls-light2.png);
+  background-repeat: no-repeat
+}
+
+.icon-grid {
+  background-position: 0 0
+}
+
+.icon-arrow-left {
+  background-position: -40px 0
+}
+
+.icon-arrow-right {
+  background-position: -80px 0
+}
+
+.icon-fullscreen-exit {
+  background-position: -120px 0
+}
+
+.icon-fullscreen {
+  background-position: -160px 0
+}
+.fs-toggle {
+  display: none;
+}
+
+
+.item {
+  display: inline-block;
+  cursor: pointer;
+  width: 24%;
+  height: auto;
+  margin-right: .5%
+}
+
+.item img,
+.item--big img {
+  width: 100%;
+  display:block;
+}
+
+.items--big {
+  position: absolute;
+  top: 0;
+  left: 0
+  right:0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none
+}
+
+.item--big {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  left: 20%;
+  right: 20%;
+  top: 3em;
+  opacity: 0;
+  -webkit-transform: scale(.8);
+  transform: scale(.8)
+}
+.item--big .img-caption{
+  position:absolute;
+  width:100%;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0,0.6);
+  color:white;
+  padding:10px;
+  font-size:.8em;
+  text-align:center;
+}
+.fadeInScaleUp {
+  -webkit-animation: fadeInScaleUp .5s ease-out .6s forwards;
+  animation: fadeInScaleUp .5s ease-out .6s forwards;
+  z-index: 3
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut .4s ease-out forwards;
+  animation: fadeOut .4s ease-out forwards;
+  z-index: 1
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.scaleDownFadeOut {
+  -webkit-animation: scaleDownFadeOut .4s ease-in forwards;
+  animation: scaleDownFadeOut .4s ease-in forwards;
+  pointer-events: none
+}
+
+@keyframes scaleDownFadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  99% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes scaleDownFadeOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  99% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.scaleUpFadeIn {
+  opacity: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-animation: scaleUpFadeIn ease-in-out .4s forwards;
+  animation: scaleUpFadeIn ease-in-out .4s forwards;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s
+}
+
+@keyframes scaleUpFadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  1% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes scaleUpFadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  1% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.showLastSecond {
+  opacity: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-animation: showLastSecond ease-in-out .4s forwards;
+  animation: showLastSecond ease-in-out .4s forwards;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s
+}
+
+@keyframes showLastSecond {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  1% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  99% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes showLastSecond {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  1% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5)
+  }
+
+  99% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .item--big {
+    width: 80%;
+    right: 10%;
+    left: 10%
+  }
+}
+
+#gridPic {
+  height: 15px;
+  width: 15px;
+}
+
+#fullPic {
+  height: 15px;
+  width: 15px;
+}
+
+.credit {
+	padding-top: 15px;
+}
+
+.tips {
+	font-size: 12px;
+}
+
+/*
+*
+* equipment page Styles
+*
+*/
+.aboutRates p {
+	margin-left: 25px;
+}
+
+#are {
+	margin-left: 25px;
+}
+
+.aboutRates {
+	font-size: 12px;
+}
+
+.aboutRates h2 {
+	padding-top: 25px;
+}
+
+.aboutRates img {
+	margin-top: 25px;
+	margin-left: 35px;
+	box-shadow: 5px 5px 2px #888888;
+}
+
+.aboutRates #preamps {
+	float: left;
+	margin-left: 130px;
+}
+
+.aboutRates #mics {
+	float: left;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-right: 75px;
+	padding-bottom: 25px;
+}
+
+.aboutRates #instruments {
+	float: left;
+	margin-left: 130px;
+}
+
+.aboutRates #monitors {
+	float: left;
+	margin-left: 59px;
+	padding-right: 80px;
+	padding-bottom: 135px;
+}
+
+.aboutRates #consoles {
+	float: left;
+	margin-left: 130px;
+	margin-right: 60px;
+	margin-top: -25px;
+}
+
+.aboutRates #programs {
+	padding-bottom: 80px;
+}
+
+
+/*
+*
+* rates page Styles
+*
+*/
+
+#bob {
+	width: 700px;
+	padding-bottom: 25px;
+}
+
+/* rate Table */
+
+table.rate {
+	margin-top: 25px;
+	border: 1px solid #349482;
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+
+table.rate th,
+table.rate td {
+	border: 1px solid #555;
+	padding: 15px;
+}
+
+table.rate th {
+	background-color: #3CB7AB;
+	color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #349482;
+	color: white;
+}
+
+tr:hover {
+	background-color: #111;
+	color: white;
+}
+
+
+/*
+*
+* contact page Styles
+*
+*/
+
+#book {
+	background: #000000;
+	width: 250px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+
+#contact {
+	width: 190px;
+	margin-left: 520px;
+	margin-top: -250px;
+	padding-bottom: 120px;
+	font-weight: bold;
+
+}
+
+
+form#userform {
+	margin-top: 25px;
+	background: black;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 20px;
+	width: 700px;
+}
+
+form#userform fieldset {
+	border:none;
+	margin-bottom: 15px;
+}
+
+form#userform legend {
+	font-size: 18px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	text-shadow: 0px 1px 1px #3d3d3d;
+}
+    
+form#userform fieldset fieldset legend {
+	font-size: 14px;
+	padding-top: 10px;
+}    
+
+form#userform ul li {
+	list-style: none;
+	background-color: #f0f6f8;
+	background-color: rgba(240, 246, 248, 0.8);
+	border-style: solid;
+	border-color: #a8a8a8;
+	border-color:(168,168,168,0.6)
+	border-width: 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 2px;
+}
+
+form#userform ul ul li {
+	background: none;
+	border: none;
+	float: left;
+	padding-right: 20px;
+}
+
+form#userform label {
+	font-size: 15px;
+	padding-right: 10px;
+	margin-left: 15px;
+}
+
+form#userform label[for=postacode],
+form#userform label[for=country] {
+	padding-right: 37px;
+}
+
+form#userform label[for=phone] {
+	padding-right: 27px;
+}
+
+form#userform label[for=address1] {
+	padding-right: 15px;
+
+}
+
+form#userform label[for=email] {
+	padding-right: 40px;
+}
+
+
+form#userform input:not([type=radio]) {
+	border: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width: 200px;
+	outline: none;
+	padding:5px;
+}
+
+form#userform fieldset fieldset label:hover {
+	cursor: pointer;
+ }
+ 
+form#userform input:not([type=submit]):focus {
+	background: #efefef;
+}
+
+form#userform button {
+	background: #f9f9f9;
+	border: none;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	display: block;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 10px 25px;
+ 	text-shadow: 0px 1px 1px #3d3d3d;
+	margin: auto;
+}
+
+form#userform button:hover {
+	background: #349482;
+	cursor: pointer;
+}
+
+
