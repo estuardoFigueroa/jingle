@@ -1,50 +1,67 @@
-<%= render @jingles %>
+		<h1>Our Jingles</h1>
+		<form id="orderform" action="http://stungeye.com/school/webdev/thankyou.php" method="POST">
+			<fieldset id="orderInfo">
+				<div class="left">
+					<h3>Purchase Your Jingle</h3>
+					<ul id="jingles">
+						<%= render @jingles %>
+					</ul>
+				</div>
+				<div class="right">
+					<h3>Cart</h3>
+					<ul id="cart">
+						<!--
+						<li id="cartItem1">
+							<p><img src="images/mac.png" alt="imac" /><span>iMac</span><br />
+								Quantity: <span>2</span><br />
+								Total: <span>$3799.98</span>						
+							</p>
+							<button id="removeItem1" type="button">Remove</button>
+							<div class="clear"></div>
+						</li>
+						-->
+						<li id="noItems">
+							<p class="center noitems">No items in your cart</p>
+						</li>
+						<li id="total">
+							<p>Total Order Amount: 
+								<span id="cartTotal">$0.00</span>
+							<p>
+						</li>
+					</ul>
+					<p id="gotoShipping"><a href="#shippinginfo">Enter your info and payment information</a></p>
+				</div>
+			</fieldset>
 
-<p>Our Newest Jingles : </p>
+<fieldset id="orderInfo">
+	<div class="left">
+		<section class="newjingle">
+			<p>Our Newest Jingles : </p>
+			<table>
+				<th>Name</th>
+				<th>Price</th>
 
-<table>
-	<th>Name</th>
-	<th>Price</th>
+				<% @newest_jingles.each do |newest| %>
+					<tr>
+						<td><%=newest.name%></td>
+						<td><%=newest.price%></td>
+					</tr>
+				<%end%>
+			</table>
+		</section>	
+		<section class="onsale">
+			<p>Jingles On Sales :</p>
+			<table>
+				<th>Name</th>
+				<th>Price</th>
 
-<% @newest_jingles.each do |newest| %>
-	<tr>
-		<td><%=newest.name%></td>
-		<td><%=newest.price%></td>
-	</tr>
-<%end%>
-
-</table>
-
-<p>Jingles On Sales :</p>
-
-<table>
-	<th>Name</th>
-	<th>Price</th>
-
-<% @onsale_jingles.each do |sale| %>
-	<tr>
-		<td><%=sale.name%></td>
-		<td><%=sale.price%></td>
-	</tr>
-<%end%>
-
-</table>
-
-<p>Categories : </p>
-
-<table>
-	<th>Genre</th>
-	<th>Name</th>
-	<th>Description</th>
-	<th> <th>
-
-<% @all_jingles.each do |jin| %>
-	<tr>
-		<td><%=jin.genre.name%></td>
-		<td><%=jin.name%></td>
-		<td><%=jin.description%></td>
-		<td><%=image_tag jin.image, :alt => "Jingle", :width => 200, :height => 150, :crop => :fill%></td>
-	</tr>
-<%end%>
-
-</table>
+				<% @onsale_jingles.each do |sale| %>
+					<tr>
+						<td><%=sale.name%></td>
+						<td><%=sale.price%></td>
+					</tr>
+				<%end%>
+			</table>
+		</section>
+	</div>
+</fieldset>
