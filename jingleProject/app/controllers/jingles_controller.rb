@@ -5,6 +5,7 @@ class JinglesController < ApplicationController
   end
 
   def about
+    @about_info = Info.first
   end
 
   def jingles

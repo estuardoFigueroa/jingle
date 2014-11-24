@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20141124023405) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "cart_items", force: true do |t|
-    t.decimal  "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "product_id"
-    t.integer  "cart_id"
-  end
-
   create_table "carts", force: true do |t|
     t.string   "status"
     t.decimal  "pst_rate"
@@ -61,10 +53,7 @@ ActiveRecord::Schema.define(version: 20141124023405) do
     t.decimal  "hst_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "customer_id"
   end
-
-  add_index "carts", ["customer_id"], name: "index_carts_on_customer_id"
 
   create_table "customers", force: true do |t|
     t.string   "name"
@@ -106,8 +95,9 @@ ActiveRecord::Schema.define(version: 20141124023405) do
     t.datetime "updated_at"
     t.integer  "genre_id"
     t.string   "image"
-    t.boolean  "sale"
   end
+
+  add_index "jingles", ["genre_id"], name: "index_jingles_on_genre_id"
 
   create_table "provinces", force: true do |t|
     t.string   "name"
