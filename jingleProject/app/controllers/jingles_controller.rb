@@ -16,5 +16,6 @@ class JinglesController < ApplicationController
   end
 
   def contact
+    @our_info = Info.first
   end
 end
