@@ -9,7 +9,7 @@ class JinglesController < ApplicationController
   end
 
   def jingles
-    @jingles = Jingle.all.order(:name)
+    @jingles = Jingle.order("name").page(params[:page]).per(2)
     @newest_jingles = Jingle.limit(3).reverse_order
     @onsale_jingles = Jingle.where('price < 250')
     @all_jingles    = Jingle.all
