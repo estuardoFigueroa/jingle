@@ -1,7 +1,43 @@
+<div class="left">
+	<h3>Purchase Your Jingle</h3>
+	<ul id="jingles">
+		<% @found_jingle.each do |jingle| %>
+		<li>					
+			<p>
+			  <strong>Name:</strong>
+			  <%= jingle.name %>
+			</p>
 
+			<p>
+			  <strong>Genre:</strong>
+			  <%= jingle.genre.name %>
+			</p>
 
-<% @found_jingle.each do |result| %>
-	
-	<%= result.name %>
-	
-<%end%>
+			<p>
+			  <strong>Description:</strong>
+			  <%= jingle.description %>
+			</p>
+
+			<p>
+			  <strong>Price:</strong>
+			  <%= number_to_currency jingle.price %>
+			</p>
+
+			<p>
+			  <strong>Lyrics:</strong>
+			  <% if jingle.hasLyrics %>
+			  Yes
+			  <%else%>
+			  no
+			  <%end%>
+			</p>
+			
+			<div class="quantityField" id="item1">
+				<button type="button" id="addMac">Add</button>
+			</div>
+
+			<div class="clear"></div>
+		</li>
+		<%end%>
+	</ul>
+</div>	
