@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'contact' => 'jingles#contact'
 
+  get 'showbycategory/:id' => 'jingles#showbycategory', as: 'show_by_genre'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

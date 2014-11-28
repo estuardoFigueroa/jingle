@@ -100,4 +100,18 @@ section.onsale{
 	float: right;
 }
 
+nav#pagi {
+
+  padding: 6px 12px;
+  margin-left: 200px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
 /* End of Order Products styles */

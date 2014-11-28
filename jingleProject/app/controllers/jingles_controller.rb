@@ -1,4 +1,3 @@
-
 class JinglesController < ApplicationController
   def home
     @jin_all = Jingle.all
@@ -18,5 +17,10 @@ class JinglesController < ApplicationController
 
   def contact
     @our_info = Info.first
+  end
+
+  def showbycategory
+    @jiny = Genre.first
+    @jin_genre = Genre.find(params[:id])
   end
 end

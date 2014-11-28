@@ -1,0 +1,11 @@
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Genres
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
+  	<% @jin_genre.each do |gen| %>
+    <li role="presentation"><%=link_to gen.name, show_by_genre_path(gen) %></li>
+    <%end%>
+  </ul>
+</div>
