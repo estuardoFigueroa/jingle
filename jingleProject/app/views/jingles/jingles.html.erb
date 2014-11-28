@@ -1,5 +1,4 @@
 		<h1>Our Jingles</h1>
-		<form id="orderform" action="http://stungeye.com/school/webdev/thankyou.php" method="POST">
 			<fieldset id="orderInfo">
 				<div class="left">
 					<h3>Purchase Your Jingle</h3>
@@ -32,7 +31,13 @@
 					</ul>
 					<p id="gotoShipping"><a href="#shippinginfo">Enter your info and payment information</a></p>
 				</div>
-				<%= render 'drop' %>  
+				<%= render 'drop' %>
+
+				<%= form_tag(search_results_path, method: 'get') do %>
+					<%=label_tag(:keyword, "Search for" ) %>
+					<%=text_field_tag(:keyword)%>
+					<%= submit_tag("Search")%>
+				<%end%>
 			</fieldset>
 
 <fieldset id="orderInfo">

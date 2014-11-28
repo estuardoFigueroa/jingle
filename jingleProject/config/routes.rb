@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'showbycategory/:id' => 'jingles#showbycategory', as: 'show_by_genre'
 
+  get 'search_results' => 'jingles#search_results', as: 'search_results'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
