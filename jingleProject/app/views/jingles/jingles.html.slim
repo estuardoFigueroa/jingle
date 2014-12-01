@@ -1,0 +1,52 @@
+h1 Our Jingles
+fieldset#orderInfo
+  .left
+    h3 Purchase Your Jingle
+    ul#jingles= render @jingles
+    nav#pagi= paginate @jingles
+  .right
+    h3 Cart
+    ul#cart
+      /!
+        | <li id="cartItem1"
+        | <p><img src="images/mac.png" alt="imac" /><span>iMac</span><br /
+        | Quantity: <span>2</span><br /
+        | Total: <span>$3799.98</span
+        | </p
+        | <button id="removeItem1" type="button">Remove</button
+        | <div class="clear"></div
+        | </li
+      li#noItems
+        p.center.noitems No items in your cart
+      li#total
+        p
+          | Total Order Amount:
+          span#cartTotal $0.00
+        p
+    p#gotoShipping
+      a href="#shippinginfo"  Enter your info and payment information
+  = render 'drop'
+  = form_tag(search_results_path, method: 'get') do
+    = label_tag(:keyword, "Search by Jingle" )
+    = text_field_tag(:keyword)
+    = submit_tag("Search")
+fieldset#orderInfo
+  .left
+    section.newjingle
+      p Our Newest Jingles :
+      table
+        th Name
+        th Price
+        - @newest_jingles.each do |newest|
+          tr
+            td= newest.name
+            td= newest.price
+    section.onsale
+      p Jingles On Sales :
+      table
+        th Name
+        th Price
+        - @onsale_jingles.each do |sale|
+          tr
+            td= sale.name
+            td= sale.price
