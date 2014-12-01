@@ -1,0 +1,7 @@
+.dropdown
+  button#dropdownMenu1.btn.btn-default.dropdown-toggle aria-expanded="true" data-toggle="dropdown" type="button" 
+    | Genres
+    span.caret
+  ul.dropdown-menu.dropdown-menu-right aria-labelledby="dLabel" role="menu" 
+    - @jin_genre.each do |gen|
+      li role="presentation" = link_to gen.name, show_by_genre_path(gen)
