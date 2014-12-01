@@ -1,0 +1,29 @@
+.left
+  h3 Purchase Your Jingle
+  - if @found_jingle.size.zero?
+    p No Jingle found
+  - else
+    ul#jingles
+      - @found_jingle.each do |jingle|
+        li
+          p
+            strong Name:
+            = jingle.name
+          p
+            strong Genre:
+            = jingle.genre.name
+          p
+            strong Description:
+            = jingle.description
+          p
+            strong Price:
+            = number_to_currency jingle.price
+          p
+            strong Lyrics:
+            - if jingle.hasLyrics
+              | Yes
+            - else
+              | no
+          #item1.quantityField
+            button#addMac type="button"  Add
+          .clear
