@@ -29,6 +29,7 @@ before_action :set_all_jingles
   def search_results
       results = '%' + params[:keyword] + "%"
       @found_jingle = Jingle.where("name LIKE ? OR description LIKE ?", results, results)
+      @found_genre = Genre.where("name LIKE ?", results)
   end
 
   def set_all_jingles

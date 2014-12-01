@@ -34,7 +34,7 @@
 				<%= render 'drop' %>
 
 				<%= form_tag(search_results_path, method: 'get') do %>
-					<%=label_tag(:keyword, "Search for" ) %>
+					<%=label_tag(:keyword, "Search by Jingle" ) %>
 					<%=text_field_tag(:keyword)%>
 					<%= submit_tag("Search")%>
 				<%end%>
